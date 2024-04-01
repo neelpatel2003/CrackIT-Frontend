@@ -1,32 +1,42 @@
-import axios from 'axios';
 import React, { useState } from 'react'
-
-const CodeEditor = async () => {
-   const [message, setMessage] = useState('');
-   const [botReply, setBotReply] = useState('');
-   const handleChat = async () => {
+import axios from 'axios';
+const CodeEditor = () => {
+   const [message, setMessage] = useState("");
+   const [reply, setReply] = useState("");
+   const codeCompiler = async () => {
       try {
          const response = await axios.post('/api/chat', {
-            prompt: message
+            prompt: `Analyze the code and give suggestions, programming language of code, time complexity of code and fix errors.Code is as per below:
+            ${message}`
          });
          console.log(response);
-         setBotReply(response.data);
+         setReply(response.data);
       } catch (error) {
          console.error(error);
       }
-   };
+   }
    return (
       <>
          <div className="editor-container">
             <div className="editor">
                <h2>CODE EDITOR</h2>
-               <textarea className='p-3' onChange={(e) => setMessage(e.target.value)} name="CodeEditor" id="code-editor" cols={70} rows={10} placeholder='Write code here..'></textarea>
+               <textarea
+                  value={message}
+                  name="CodeEditor"
+                  id="code-editor"
+                  cols={70}
+                  rows={10}
+                  placeholder='Write code here..'
+                  onChange={(e) => setMessage(e.target.value)}></textarea>
+               <textarea
+                  value={reply}
+                  name="CodeEditor"
+                  id="code-editor"
+                  cols={70}
+                  rows={10}
+                  placeholder='Output...'></textarea>
             </div>
-            <button onClick={handleChat} type='submit' className='editor-btn'>Submit</button>
-            <hr className='w-full m-3' />
-            <div className='m-3'>
-               {botReply}
-            </div>
+            <button type='submit' onClick={codeCompiler} className='editor-btn'>Submit</button>
          </div>
       </>
    )
