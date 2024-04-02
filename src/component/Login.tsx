@@ -43,7 +43,7 @@ const Login = () => {
          <Navbar />
          <Video />
          <div className='login-container'>
-            <h2>Login</h2>
+            <h2 className='font-serif'>Login</h2>
             <hr />
             <form onSubmit={handleSubmit}>
                <div>

@@ -17,10 +17,10 @@ const ChatBot = () => {
         }
     };
     return (
-        <>
-            <img src='./src/utils/about-bg.jpg' className='fixed blur-md h-100 w-100 z-[-1]'></img>
+        <div className='bg-[#D6DCE4]'>
+            {/* <img src='./src/utils/about-bg.jpg' className='fixed blur-md h-100 w-100 z-[-1]'></img> */}
             <Navbar />
-            <p className='text-3xl mt-6'>AI can help you in</p>
+            <p className='text-3xl mt-6 font-serif'>Our AI can help you in</p>
             <marquee>
                 <div className='flex text-xl justify-between m-3 px-4'>
                     <p>Code Autocompletion</p>
@@ -30,11 +30,11 @@ const ChatBot = () => {
                 </div>
             </marquee>
             <hr />
-            <div className='flex justify-between mt-7 mb-4 p-4'>
+            <div className='flex justify-between mt-7 mb-4 p-4 mx-10'>
                 <video src="/src/utils/video/robot.mp4" autoPlay muted loop className='h-[450px] rounded-3xl'></video>
                 <div className='flex flex-col justify-center items-center mr-10'>
                     <div className='text-3xl m-2'>Click here to use the ChatBot</div>
-                    <a href="#bot"><button className='border-2 border-black rounded-lg text-xl p-2 m-2 bg-[#1f2937] text-white hover:bg-'>ChatBot</button></a>
+                    <a href="#bot"><button className='border-2 border-black rounded-lg text-xl p-2 m-2 bg-gray-700 text-white hover:bg-gray-950'>ChatBot</button></a>
                 </div>
             </div>
             <div className='bot-container container p-4' id='bot'>
@@ -58,7 +58,7 @@ const ChatBot = () => {
                     </div>
                 </div>
             </div >
-        </>
+        </div>
     );
 }
 

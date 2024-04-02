@@ -1,6 +1,9 @@
 import React from "react"
-export default () => {
 
+function subscribe() {
+   alert("Email sent successfully")
+}
+export default () => {
    return (
       <footer className="pt-4 bg-gray-800">
          <div className="max-w-screen-xl mx-auto px-8 md:px-8 text-left p-0">
@@ -15,12 +18,13 @@ export default () => {
                      <div className="relative">
                         <input
                            type="email"
+                           id="validateEmail"
                            required
                            placeholder="Enter your email"
                            className="w-full py-2 text-gray-500 bg-white shadow-sm rounded-lg "
                         />
                      </div>
-                     <button className="block w-auto py-2 px-3 font-medium text-md text-center text-white bg-indigo-600 hover:bg-blue-800 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
+                     <button onClick={subscribe} className="block w-auto py-2 px-3 font-medium text-md text-center text-white bg-indigo-600 hover:bg-blue-800 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
                         Subscribe
                      </button>
                   </form>

@@ -51,7 +51,7 @@ const Signup = () => {
          <Navbar />
          <Video />
          <div className="signup-container">
-            <h2>Create Account</h2>
+            <h2 className='font-serif'>Create Account</h2>
             <hr />
             <form className="signup-form" onSubmit={handleSubmit}>
                <div className="form-group">

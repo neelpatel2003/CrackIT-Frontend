@@ -9,11 +9,11 @@ const About = () => {
          <div className='about-bg'></div>
          <div className="about-container">
             <div className="about-content">
-               <h2>About Our Platform</h2>
+               <h2 className='font-serif'>About Our Platform</h2>
                <p>
                   Our platform is dedicated to helping individuals prepare for technical interviews, specifically focusing on system design questions. We provide a comprehensive range of resources and tools to assist you in mastering this crucial aspect of software engineering interviews.
                </p>
-               <h3>Benefits of Using Our Platform:</h3>
+               <h3 className='font-serif'>Benefits of Using Our Platform:</h3>
                <ul className="benefits-list">
                   <li>Extensive Collection of System Design Questions: Access a wide array of system design questions covering various topics and complexities.</li>
                   <li>Interactive Problem-Solving Environment: Practice solving questions in a simulated real-world environment, gaining hands-on experience.</li>

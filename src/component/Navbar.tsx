@@ -38,6 +38,9 @@ const Navbar = () => {
                   (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>About</NavLink>
                {(isloggedIn.isloggedIn) ? <div>
                   <div className='logout-container'>
+                     <div className='flex flex-col mb-3'>
+                        <hr className='border-2 border-white h-14 rounded-xl'/>
+                     </div>
                      <NavLink to='/profile'><div className='profile-name'>{username.userName}</div></NavLink>
                      <NavLink to='/login' onClick={handleLogOut}><i className="ri-logout-circle-line"></i>LogOut</NavLink>
                   </div>

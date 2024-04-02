@@ -6,7 +6,8 @@ body {
   /* position: relative; */
   /* height: 300vh; */
   font-family: 'Nunito', sans-serif;
-  transition: all 0.2s ease-in-out;
+  transition: all 1s ease;
+  -webkit-transition: all 2s ease;
 }
 
 ::-webkit-scrollbar {
@@ -103,7 +104,7 @@ body {
   margin-top: -17px;
   margin-right: 1.6vw;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
   @media only screen and (max-width: 768px) {
     font-size: 2.5vw;
@@ -116,7 +117,7 @@ body {
 
 .nav-container a:hover {
   color: white;
-  text-shadow: 0px 2px 3px white;
+  text-shadow: 0px 2px 2.5px white;
 }
 
 .list-button {
@@ -242,8 +243,7 @@ input[type="password"] {
   box-sizing: border-box;
 }
 
-.submit-btn,
-.google-signup-btn {
+.submit-btn{
   display: block;
   width: 100%;
   margin-top: 3vh;
@@ -371,17 +371,12 @@ input[type="password"] {
 }
 
 .about-bg {
-  height: 1000vh;
-  background: url(./utils/about-bg.jpg);
-  -webkit-filter: blur(38px);
-  position: fixed;
+  background-color: #D6DCE4;
   width: 100%;
-  z-index: -1;
   top: 0;
 }
 
 .about-content {
-  max-width: 800px;
   margin: 0 auto;
   text-align: justify;
 }
@@ -449,7 +444,7 @@ input[type="password"] {
 }
 
 .editor-container {
-  margin: 40px 5px 30px 5px;
+  margin: 20px 5px 30px 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -468,17 +463,17 @@ input[type="password"] {
 .editor-btn {
   border: 1px solid black;
   border-radius: 8px;
-  /* background-color: #1f2937; */
+  background-color: #1f2937;
   font-size: 18px;
-  color: #1f2937;
+  color: white;
   transition: 0.2s ease-in-out;
   margin: 5px;
   padding: 5px 10px;
 }
 
 .editor-btn:hover {
-  background-color: #1f2937;
-  color: white;
+  color: #1f2937;
+  background-color: white;
 }
 
 .editor-container h2 {
@@ -498,12 +493,17 @@ input[type="password"] {
   /* display: inline-block; */
   /* max-width: 450px; */
   height: 340px;
-  z-index: 2;
+  position: relative;
+  /* background-color: #0056b3; */
+  /* z-index: 2; */
   box-shadow: 10px 10px 10px #818181;
   padding: 20px 35px 0px 34px;
   transition: 0.1s ease-in-out;
 }
-
+.profile-container{
+  background: #e7e3d4;
+  
+}
 .pwd-container:hover {
   transform: scale(1.03);
 }
@@ -615,10 +615,17 @@ hr {
 
 .profile-page {
   height: 100vh;
-  background: url(./utils/about-bg.jpg);
-  -webkit-filter: blur(20px);
+  background-color: #D6DCE4;
   position: fixed;
   width: 100%;
   z-index: -1;
   top: 0;
+}
+.editor-page{
+  height: 100vh;
+  background-color: #D6DCE4;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  top: 0; 
 }

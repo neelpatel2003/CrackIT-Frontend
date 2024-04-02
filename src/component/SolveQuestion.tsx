@@ -25,9 +25,9 @@ const SolveQuestion = () => {
       <>
          <Navbar />
          {(question) ? <div>
-            <h3 className='text-2xl my-2'>{question.title}</h3>
-            <p className='text-lg text-left mx-3'> {`-->`} {question.description}</p>
-            <p className='text-lg m-1'>{question.level.toString()}</p>
+            <h3 className='text-2xl my-2 text-blue-700'>{question.title}</h3>
+            <p className='text-lg text-left mx-3 my-1'> {`-->`} {question.description}</p>
+            <div className='flex justify-center items-center my-1'><p className='text-xl'>Difficulty Level: </p><p className='text-lg m-1'>{question.level.toString()}</p></div>
          </div> : <></>}
          <hr />
          <CodeEditor/>

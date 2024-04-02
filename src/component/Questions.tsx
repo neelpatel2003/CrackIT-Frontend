@@ -25,17 +25,18 @@ const Quetions = () => {
    }, []);
 
    return (
-      <>
-         <img src='./src/utils/about-bg.jpg' className='fixed blur-md h-100 w-100 z-[-1]'></img>
+         <div className='bg-[#D6DCE4] '>
          <Navbar />
-         <div className='my-[5vw]'>
+         <div className='my-[18px]'>
+            <p className='text-3xl mb-4 font-serif'>Questions</p>
+            <hr />
             {(questionList) ? <ul>{
                questionList.map((question, index) => (
                   <QuestionCard key={index} title={question.title} description={question.description} level={question.level} />
                ))
             }</ul> : <Loading />}
          </div>
-      </>
+      </div>
    )
 }
 

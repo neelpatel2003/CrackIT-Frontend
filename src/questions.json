@@ -1,0 +1,72 @@
+[
+    {
+        "title": "URL Shortening Service",
+        "description": "Design a system that takes long URLs and converts them into short links.",
+        "level": 6
+    },
+    {
+        "title": "Social Media Feed",
+        "description": "Design a system that generates a user's personalized social media feed based on their interests and social connections.",
+        "level": 7
+    },
+    {
+        "title": "Online Food Ordering System",
+        "description": "Design a system for ordering food online, including user registration, browsing menus, placing orders, and payment processing.",
+        "level": 8
+    },
+    {
+        "title": "Content Delivery Network (CDN)",
+        "description": "Design a system that efficiently delivers web content to users by distributing it across multiple servers located in different geographic locations.",
+        "level": 9
+    },
+    {
+        "title": "Search Engine",
+        "description": "Design a system that efficiently indexes and retrieves relevant web pages in response to user search queries.",
+        "level": 9
+    },
+    {
+        "title": "Online Marketplace",
+        "description": "Design a system for buying and selling goods or services online, including user registration, product listings, search functionality, and transaction processing.",
+        "level": 8
+    },
+    {
+        "title": "Design a chat service like Facebook Messenger or WhatsApp",
+        "description": "You'll design a service that allows users to chat with each other over the internet. Conversations can be one-on-one or can be group chats with many members. Messages should only be accessible by those included in the conversation.",
+        "level": 5
+    },
+    {
+        "title": "Design Uber",
+        "description": "Create a ride-sharing service that matches users with nearby drivers. Users can input a destination and transmit their current location and nearby drivers are notified within seconds.\n\nThe app then tracks a route between the driver and user’s current locations, then from the user’s location to the destination.",
+        "level": 5
+    },
+    {
+        "title": "Chat Application",
+        "description": "Design a system for real-time messaging between users, including features such as one-on-one chats, group chats, and message history.",
+        "difficulty": 7
+    },
+    {
+        "title": "Online Banking System",
+        "description": "Design a system for managing banking transactions, including account management, fund transfers, transaction history, and security measures.",
+        "difficulty": 8
+    },
+    {
+        "title": "Ride-Sharing Service",
+        "description": "Design a system for matching passengers with drivers, handling ride requests, tracking locations, and processing payments.",
+        "difficulty": 8
+    },
+    {
+        "title": "Music Streaming Service",
+        "description": "Design a system for streaming music to users, including features such as playlists, recommendations, and offline playback.",
+        "difficulty": 7
+    },
+    {
+        "title": "Online Education Platform",
+        "description": "Design a system for delivering online courses, including user registration, course management, video streaming, and assessments.",
+        "difficulty": 8
+    },
+    {
+        "title": "Appointment Scheduling System",
+        "description": "Design a system for scheduling appointments between users and service providers, managing availability, and sending reminders.",
+        "difficulty": 6
+    }
+]

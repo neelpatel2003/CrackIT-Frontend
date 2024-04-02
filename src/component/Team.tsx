@@ -19,7 +19,7 @@ export default () => {
         <section className="py-10">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="max-w-xl mx-auto sm:text-center">
-                    <h3 className="text-gray-800 text-4xl font-semibold sm:text-4xl">
+                    <h3 className="text-gray-800 text-4xl font-semibold sm:text-4xl font-serif">
                         Our team
                     </h3>
                     <p className="text-gray-600 text-xl mt-3">
