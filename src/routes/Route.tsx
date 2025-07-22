@@ -11,24 +11,24 @@ import Questions from '../component/Questions';
 import SolveQuestion from '../component/SolveQuestion';
 import Footer from '../component/Footer';
 const route = () => {
-   return (
-      <>
-         <Router>
-            <Routes>
-               <Route path='/' element={<HomePage />} />
-               <Route path='/login' element={<LogIn />} />
-               <Route path='/signup' element={<SignUp />} />
-               <Route path='/about' element={<About />} />
-               <Route path='/loading' element={<Loading />} />
-               <Route path='/profile' element={<Profile />} />
-               <Route path='/chatbot' element={<ChatBot />} />
-               <Route path='/questions' element={<Questions />} />
-               <Route path='/solvequestion' element={<SolveQuestion />} />
-            </Routes>
-         </Router>
-         <Footer />
-      </>
-   )
+    return (
+        <>
+            <Router>
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/login' element={<LogIn />} />
+                    <Route path='/signup' element={<SignUp />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/loading' element={<Loading />} />
+                    <Route path='/profile' element={<Profile />} />
+                    <Route path='/chatbot' element={<ChatBot />} />
+                    <Route path='/questions' element={<Questions />} />
+                    <Route path='/solvequestion' element={<SolveQuestion />} />
+                </Routes>
+            </Router>
+            <Footer />
+        </>
+    )
 }
 
 export default route

@@ -4,13 +4,13 @@ import Route from './routes/Route';
 
 function App() {
 
-  return (
-    <>
-      <Route/>
-    </>
+    return (
+        <>
+            <Route />
+        </>
 
 
-  )
+    )
 }
 
 export default App

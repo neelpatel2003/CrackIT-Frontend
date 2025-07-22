@@ -11,7 +11,7 @@ const About = () => {
             <div className="about-content">
                <h2 className='font-serif'>About Our Platform</h2>
                <p>
-                  Our platform is dedicated to helping individuals prepare for technical interviews, specifically focusing on system design questions. We provide a comprehensive range of resources and tools to assist you in mastering this crucial aspect of software engineering interviews.
+                  <span className='text-2xl font-serif text-gray-700'>CrackIT</span> is dedicated to helping individuals prepare for technical interviews, specifically focusing on system design questions. We provide a comprehensive range of resources and tools to assist you in mastering this crucial aspect of software engineering interviews.
                </p>
                <h3 className='font-serif'>Benefits of Using Our Platform:</h3>
                <ul className="benefits-list">
