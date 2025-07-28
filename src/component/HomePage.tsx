@@ -9,7 +9,10 @@ const HomePage = () => {
     return (
         <Suspense fallback={<Loading />}>
             <div className="video-bg-container">
-                <video id="bubble-bg" className="video-bg" src='./video/bg-video.mp4' loop autoPlay muted ></video>
+                <video autoPlay loop muted id='bubble-bg' className='video-bg'>
+                    <source src="./bg-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <Navbar />
             <GetStarted />
