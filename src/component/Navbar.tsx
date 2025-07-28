@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import useScreenSize from '../hooks/useScreenSize';
 import variables from '../variables';
@@ -13,13 +14,16 @@ const Navbar = () => {
         setName(variables.getUserName());
     }, []);
 
+    const navigate = useNavigate();
+
     const handleLogout = () => {
         variables.setIsLoggedIn(false);
         variables.setUserName('');
         setLoggedIn(false);
         setName('');
-        window.location.href = '/login';
+        navigate('/login'); // React-friendly route change
     };
+
 
     const openNav = () => {
         setIsOpen(true);
@@ -66,7 +70,7 @@ const Navbar = () => {
                                 (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Login</NavLink>
                             <NavLink to='/signup' style={({ isActive }) =>
                                 (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Signup</NavLink>
-                        </div>} 
+                        </div>}
                 </div>
                 }
             </div>
