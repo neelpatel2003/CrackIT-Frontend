@@ -1,11 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useScreenSize from '../hooks/useScreenSize';
-import userName from '../variables';
-import isloggedIn from '../variables';
+import variables from '../variables';
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const username = userName;
+    const [loggedIn, setLoggedIn] = React.useState(variables.getIsLoggedIn());
+    const [name, setName] = React.useState(variables.getUserName());
+
+    React.useEffect(() => {
+        setLoggedIn(variables.getIsLoggedIn());
+        setName(variables.getUserName());
+    }, []);
+
+    const handleLogout = () => {
+        variables.setIsLoggedIn(false);
+        variables.setUserName('');
+        setLoggedIn(false);
+        setName('');
+        window.location.href = '/login';
+    };
+
     const openNav = () => {
         setIsOpen(true);
     };
@@ -13,6 +28,7 @@ const Navbar = () => {
     const closeNav = () => {
         setIsOpen(false);
     };
+
     const handleLogOut = () => {
         isloggedIn.isloggedIn = false;
     };
@@ -36,13 +52,13 @@ const Navbar = () => {
                         (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Questions</NavLink>
                     <NavLink to='/about' style={({ isActive }) =>
                         (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>About</NavLink>
-                    {(isloggedIn.isloggedIn) ? <div>
+                    {loggedIn ? <div>
                         <div className='logout-container'>
                             <div className='flex flex-col mb-3'>
                                 <hr className='border-2 border-white h-14 rounded-xl' />
                             </div>
-                            <NavLink to='/profile'><div className='profile-name'>{username.userName}</div></NavLink>
-                            <NavLink to='/login' onClick={handleLogOut}><i className="ri-logout-circle-line"></i>LogOut</NavLink>
+                            <NavLink to='/profile'><div className='profile-name'>{name}</div></NavLink>
+                            <NavLink to='/login' onClick={handleLogout}><i className="ri-logout-circle-line"></i>LogOut</NavLink>
                         </div>
                     </div> :
                         <div className="collab">
@@ -50,7 +66,7 @@ const Navbar = () => {
                                 (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Login</NavLink>
                             <NavLink to='/signup' style={({ isActive }) =>
                                 (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Signup</NavLink>
-                        </div>}
+                        </div>} 
                 </div>
                 }
             </div>
@@ -62,10 +78,10 @@ const Navbar = () => {
                             (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Ask our AI bot!</NavLink>
                         <NavLink to='/about' style={({ isActive }) =>
                             (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>About</NavLink>
-                        {(isloggedIn.isloggedIn) ? <div>
+                        {loggedIn ? <div>
                             <div className='logout-container'>
-                                <NavLink to='/profile'><div className='profile-name'>{username.userName}</div></NavLink>
-                                <NavLink to='/login' onClick={handleLogOut}><i className="ri-logout-circle-line"></i>LogOut</NavLink>
+                                <NavLink to='/profile'><div className='profile-name'>{name}</div></NavLink>
+                                <NavLink to='/login' onClick={handleLogout}><i className="ri-logout-circle-line"></i>LogOut</NavLink>
                             </div>
                         </div> :
                             <div className="collab">

@@ -53,7 +53,9 @@ const CodeEditor = () => {
                         cols={70}
                         rows={10}
                         style={{ padding: "5px" }}
-                        placeholder='Get efficiency, language, time complexity with error handling here...'></textarea>
+                        placeholder='Get efficiency, language, time complexity with error handling here...'
+                        readOnly
+                     ></textarea>
                   </div>
                </div>
             </div>

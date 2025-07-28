@@ -1,11 +1,27 @@
 import React from "react"
-
+import axios from "axios";
+import { useState } from "react";
 function subscribe() {
     alert("Email sent successfully")
 }
 export default () => {
+    const [email, setEmail] = useState("");
+    // Replace this with actual efficiency data from your app
+    const efficiency = { score: 85, speed: "fast", accuracy: "high" };
+
+    const handleSubscribe = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            await axios.post("http://localhost:5000/api/efficiency", { email, efficiency });
+            await axios.post("http://localhost:5000/api/efficiency/send", { email });
+            alert("Efficiency results sent to your email!");
+        } catch (err) {
+            alert("Failed to send results.");
+        }
+    };
     return (
         <footer className="pt-4 bg-gray-800">
+
             <div className="max-w-screen-xl mx-auto px-8 md:px-8 text-left p-0">
                 <div className="justify-between items-center md:flex">
                     <div className="max-w-lg">
@@ -14,17 +30,18 @@ export default () => {
                         </h3>
                     </div>
                     <div className="md:mt-0">
-                        <form onSubmit={(e) => e.preventDefault()} className="flex items-center gap-x-3 md:justify-end">
+                        <form onSubmit={handleSubscribe} className="flex items-center gap-x-3 md:justify-end">
                             <div className="relative">
                                 <input
                                     type="email"
-                                    id="validateEmail"
                                     required
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
                                     placeholder="Enter your email"
                                     className="w-full py-2 text-gray-500 bg-white shadow-sm rounded-lg "
                                 />
                             </div>
-                            <button onClick={subscribe} className="block w-auto py-2 px-3 font-medium text-md text-center text-white bg-indigo-600 hover:bg-blue-800 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
+                            <button type="submit" className="block w-auto py-2 px-3 font-medium text-md text-center text-white bg-indigo-600 hover:bg-blue-800 active:bg-indigo-700 active:shadow-none rounded-lg shadow">
                                 Subscribe
                             </button>
                         </form>

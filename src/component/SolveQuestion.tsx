@@ -11,24 +11,30 @@ interface Question {
 }
 const SolveQuestion = () => {
    const [question, setQuestion] = useState<Question | null>(null);
-   const location = useLocation();
-   console.log(location.state.title);
-   const fetchQuestion = async () => {
-      axios.get(`/api/questions/${location.state.title}`).then((response) => {
-         setQuestion(response.data.Question);
-      });
-   }
+   const location = useLocation() as any;
+
+   // Defensive: if user navigates directly, location.state may not exist
+   const title = location.state?.title;
    useEffect(() => {
+      if (!title) return;
+      const fetchQuestion = async () => {
+         try {
+            const response = await axios.get(`/api/questions/${title}`);
+            setQuestion(response.data.Question);
+         } catch (err) {
+            setQuestion(null);
+         }
+      };
       fetchQuestion();
-   }, []);
+   }, [title]);
    return (
       <>
          <Navbar />
-         {(question) ? <div>
+         {title && question ? <div>
             <h3 className='text-2xl my-2 text-blue-700'>{question.title}</h3>
             <p className='text-lg text-left mx-3 my-1'> {`-->`} {question.description}</p>
-            <div className='flex justify-center items-center my-1'><p className='text-xl'>Difficulty Level: </p><p className='text-lg m-1'>{question.level.toString()}</p></div>
-         </div> : <></>}
+            <div className='flex justify-center items-center my-1'><p className='text-xl'>Difficulty Level: </p><p className='text-lg m-1'>{question.level ? question.level.toString() : 'N/A'}</p></div>
+         </div> : !title ? <div className='text-red-500'>No question selected. Please go back and select a question.</div> : <></>}
          <hr />
          <CodeEditor/>
       </>

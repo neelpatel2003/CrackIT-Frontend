@@ -3,14 +3,18 @@ import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Video from './Video';
 import { useNavigate } from 'react-router-dom';
-import userName from '../variables';
-import isloggedIn from '../variables';
+import variables from '../variables';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const Username = userName;
+    // Check if already logged in
+    React.useEffect(() => {
+        if (variables.getIsLoggedIn()) {
+            navigate('/');
+        }
+    }, [navigate]);
     const handleEmailChange = (e) => {
         setUsername(e.target.value);
     };
@@ -27,8 +31,8 @@ const Login = () => {
             password: password
         }
         await axios.post('/api/login', data).then((response) => {
-            Username.userName = response.data.user.username;
-            isloggedIn.isloggedIn = true;
+            variables.setUserName(response.data.user.username);
+            variables.setIsLoggedIn(true);
             console.log(response);
             alert("Logged in successfully!");
             navigate('/');
