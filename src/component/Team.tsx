@@ -4,12 +4,12 @@ export default () => {
 
     const team = [
         {
-            avatar: "/public/team/neel2.jpg",
+            avatar: "/team/neel2.JPG",
             name: "Neel Patel",
             title: "Full Stack Developer"
         },
         {
-            avatar: "/public/team/divya.jpg",
+            avatar: "/team/divya.jpg",
             name: "Divya Patel",
             title: "Software engineer"
         },
