@@ -31,7 +31,7 @@ const ChatBot = () => {
             </marquee>
             <hr />
             <div className='flex justify-between mt-7 mb-4 p-4 mx-10'>
-                <video src="/src/utils/video/robot.mp4" autoPlay muted loop className='h-[450px] rounded-3xl'></video>
+                <video src="/public/video/robot.mp4" autoPlay muted loop className='h-[450px] rounded-3xl'></video>
                 <div className='flex flex-col justify-center items-center mr-10'>
                     <div className='text-3xl m-2'>Click here to use the ChatBot</div>
                     <a href="#bot"><button className='border-2 border-black rounded-lg text-xl p-2 m-2 bg-gray-700 text-white hover:bg-gray-950'>ChatBot</button></a>
@@ -51,7 +51,7 @@ const ChatBot = () => {
                         />
                         <button onClick={handleChat} className='chatbot-border border-2 py-2  border-white hover:bg-gray-950'>Send</button>
                     </div>
-                    <img src="../src/utils/line2.png" alt="" />
+                    <img src="../public/line2.png" alt="" />
                     <p className='response text-xl mb-2'>Response: </p>
                     <div className='response-text'>
                         {botReply}

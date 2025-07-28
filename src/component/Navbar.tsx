@@ -43,7 +43,7 @@ const Navbar = () => {
         <>
             <div className='nav-container'>
                 <a href='/'>
-                    <img className='logo' src='./src/utils/logo.png' alt='Logo Here'></img>
+                    <img className='logo' src='./public/logo.png' alt='Logo Here'></img>
                 </a>
                 {(screenSize.width < 768) ? <button className='list-button' onClick={openNav}><div>&#9776;</div></button> : <div className='link-container'>
                     <NavLink to='/chatbot' style={({ isActive }) =>

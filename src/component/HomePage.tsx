@@ -9,7 +9,7 @@ const HomePage = () => {
     return (
         <Suspense fallback={<Loading />}>
             <div className="video-bg-container">
-                <video id="bubble-bg" className="video-bg" src='./src/utils/video/bg-video.mp4' loop autoPlay muted ></video>
+                <video id="bubble-bg" className="video-bg" src='./video/bg-video.mp4' loop autoPlay muted ></video>
             </div>
             <Navbar />
             <GetStarted />
