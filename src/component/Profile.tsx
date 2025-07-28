@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Username from '../variables';
 import Navbar from './Navbar';
+import { Navigate } from 'react-router-dom';
+import variables from '../variables';
+
 
 interface UserData {
     username: string;
@@ -10,19 +13,39 @@ interface UserData {
     password: string;
 }
 const Profile = () => {
+    const userName = variables.getUserName(); // ✅ use getter instead of Username.userName
+    useEffect(() => {
+        if (userName) {
+            fetchUserData();
+        }
+    }, [userName]);
+
     const [userData, setUserData] = useState<UserData | null>(null);
     const [newPassword, setNewPassword] = useState('');
     const [oldPassword, setOldPassword] = useState('');
     const [isUpdatePassword, setIsUpdatePassword] = useState(false);
     async function fetchUserData() {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get(`/api/users/${userName}`);
+                setUserData(response.data.userData);
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+
+        if (!userName) return <Navigate to="/login" />;
         try {
             const response = await axios.get(`/api/users/${Username.userName}`);
             setUserData(response.data.userData);
-            console.log(userData);
         } catch (error) {
             console.error('Error fetching user data:', error);
         }
-    };
+        if (!Username.userName) {
+            return <Navigate to="/login" />;
+        }
+    }
+
     async function handleUpdatePassword() {
         try {
             await axios.put(`/api/users/${Username.userName}/password`, { newPassword });
@@ -53,8 +76,11 @@ const Profile = () => {
         setIsUpdatePassword(false);
     }
     useEffect(() => {
-        fetchUserData();
+        if (Username.userName) {
+            fetchUserData();
+        }
     }, []);
+
 
     useEffect(() => { }, [isUpdatePassword])
 
@@ -67,7 +93,7 @@ const Profile = () => {
                 <hr />
                 <div className='flex justify-center my-20 mx-2'>
                     <div className="flex profile-container p-4 my-3 text-xl border-2 border-black rounded-xl text-left">
-                        <img src="./team/neel2.JPG" className="h-[150px] rounded-2xl border-2 border-black"  alt="profile" />
+                        <img src="./team/neel2.JPG" className="h-[150px] rounded-2xl border-2 border-black" alt="profile" />
                         <div className='p-4 my-3 flex flex-col '><p className='text-black flex gap-2'>Username: <div className='text-blue-700'>{(userData) ? userData.username : ''}</div></p>
                             <p className='text-black flex gap-2'>Email:<div className='text-blue-700'> {userData ? userData.email : ''}</div></p></div>
                         {/* <p className='text-black mb-2'>Problem Solved: {(userData) ? `${userData.problemSolved}` : ''}</p> */}

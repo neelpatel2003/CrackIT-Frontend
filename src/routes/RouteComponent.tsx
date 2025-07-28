@@ -10,7 +10,8 @@ import ChatBot from '../component/ChatBot';
 import Questions from '../component/Questions';
 import SolveQuestion from '../component/SolveQuestion';
 import Footer from '../component/Footer';
-const route = () => {
+
+const RouteComponent = () => {
     return (
         <>
             <Router>
@@ -24,11 +25,12 @@ const route = () => {
                     <Route path='/chatbot' element={<ChatBot />} />
                     <Route path='/questions' element={<Questions />} />
                     <Route path='/solvequestion' element={<SolveQuestion />} />
+                    <Route path='*' element={<h1>404 Page Not Found</h1>} />
                 </Routes>
             </Router>
             <Footer />
         </>
-    )
-}
+    );
+};
 
-export default route
+export default RouteComponent;

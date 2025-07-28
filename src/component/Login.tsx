@@ -30,7 +30,9 @@ const Login = () => {
             username: username,
             password: password
         };
-        await axios.post('https://crackit-backend-94gb.onrender.com/api/login', data)
+        await axios.post('https://crackit-backend-94gb.onrender.com/api/login', data, {
+            // withCredentials: true
+        })
             .then((response) => {
                 variables.setUserName(response.data.user.username);
                 variables.setIsLoggedIn(true);
@@ -43,6 +45,7 @@ const Login = () => {
                 console.log(error);
             });
     };
+
 
     return (
         <>

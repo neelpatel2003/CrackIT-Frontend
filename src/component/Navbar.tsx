@@ -33,9 +33,6 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
-    const handleLogOut = () => {
-        isloggedIn.isloggedIn = false;
-    };
     const screenSize = useScreenSize();
     useEffect(() => {
         if (screenSize.width > 768) {
@@ -46,9 +43,9 @@ const Navbar = () => {
     return (
         <>
             <div className='nav-container'>
-                <a href='/'>
+                <NavLink to='/'>
                     <img className='logo' src='./logo.png' alt='Logo Here'></img>
-                </a>
+                </NavLink>
                 {(screenSize.width < 768) ? <button className='list-button' onClick={openNav}><div>&#9776;</div></button> : <div className='link-container'>
                     <NavLink to='/chatbot' style={({ isActive }) =>
                         (isActive ? { textDecoration: 'underline' } : { color: '#edebeb' })}>Ask our AI bot!</NavLink>

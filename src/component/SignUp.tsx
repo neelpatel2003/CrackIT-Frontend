@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Video from './Video';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 const Signup = () => {
     const navigate = useNavigate();
 
@@ -72,7 +72,7 @@ const Signup = () => {
                     </div>
                     <button type="submit" className="submit-btn">Create Account</button>
                 </form>
-                <div className='create-acc'>Already have an account? <a href="./login">Login</a></div>
+                <div className='create-acc'>Already have an account? <Link to="/login">Login</Link></div>
             </div>
         </>
     );
