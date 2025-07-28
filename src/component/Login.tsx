@@ -29,17 +29,19 @@ const Login = () => {
         const data = {
             username: username,
             password: password
-        }
-        await axios.post('/api/login', data).then((response) => {
-            variables.setUserName(response.data.user.username);
-            variables.setIsLoggedIn(true);
-            console.log(response);
-            alert("Logged in successfully!");
-            navigate('/');
-        }).catch((error) => {
-            alert(`Error occured: ${error.response.data.error}`);
-            console.log(error);
-        })
+        };
+        await axios.post('https://crackit-backend-94gb.onrender.com/api/login', data)
+            .then((response) => {
+                variables.setUserName(response.data.user.username);
+                variables.setIsLoggedIn(true);
+                console.log(response);
+                alert("Logged in successfully!");
+                navigate('/');
+            })
+            .catch((error) => {
+                alert(`Error occurred: ${error.response?.data?.error || 'Unknown error'}`);
+                console.log(error);
+            });
     };
 
     return (
