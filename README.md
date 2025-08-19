@@ -1,8 +1,85 @@
-# React + Vite
+# CrackIT - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+CrackIT is a web-based platform designed to help users practice coding challenges, interact with an AI-powered chatbot, and prepare for technical interviews.  
+This repository contains the **frontend** of the application, built using **React** with **Tailwind CSS** for styling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## Technologies Used
+
+### Frontend
+
+- **React (Vite)**: JavaScript library for building interactive UIs.
+- **TypeScript**: For strong typing and better developer experience.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Axios**: For making API calls to the backend.
+- **React Router**: For seamless navigation between pages.
+
+### Tools
+
+- **VS Code**: Recommended IDE for development.
+- **Node.js + npm**: Package manager and runtime.
+
+---
+
+## Project Aim
+
+The main goal of the frontend is to provide an **intuitive and responsive interface** where users can:
+
+- Register/Login securely.
+- Browse and attempt coding problems.
+- Interact with an AI chatbot for guidance.
+- Manage their profile and submissions.
+
+---
+
+## Key Features
+
+- **Authentication**: Signup, login, logout.
+- **Dashboard**: Personalized interface for users.
+- **Problem Pages**: Browse and solve coding challenges.
+- **AI Chatbot**: Real-time Q&A assistance.
+- **Responsive UI**: Optimized for desktop and mobile.
+
+---
+
+## Demonstration
+
+### Project screenshots:
+
+_Add your screenshots here (replace file paths after uploading to GitHub):_
+
+![Home](./)  
+![Chatbot](./screenshots/chatbot.png)  
+![Login](./screenshots/login.png)  
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js (v16+)**
+- **npm or yarn**
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/neelpatel2003/CrackIT-Frontend.git
+   cd CrackIT-Frontend
+   
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the Development Server:**
+   ```bash
+   npm run dev
+   ```
+### Usage
+
+- Access the frontend application at `http://localhost:5173`.
