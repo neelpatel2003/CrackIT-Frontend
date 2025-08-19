@@ -49,11 +49,13 @@ The main goal of the frontend is to provide an **intuitive and responsive interf
 
 ### Project screenshots:
 
-Home Page: 
+## Home Page: 
 ![Home](./public/homepage.png)  
-ChatBot:
+---
+## ChatBot:
 ![Chatbot](./public/chatbot.png)  
-Login Page:
+---
+## Login Page:
 ![Login](./public/loginpage.png)  
 
 ---
