@@ -49,10 +49,11 @@ The main goal of the frontend is to provide an **intuitive and responsive interf
 
 ### Project screenshots:
 
-_Add your screenshots here (replace file paths after uploading to GitHub):_
-
+Home Page: 
 ![Home](./public/homepage.png)  
+ChatBot:
 ![Chatbot](./public/chatbot.png)  
+Login Page:
 ![Login](./public/loginpage.png)  
 
 ---
