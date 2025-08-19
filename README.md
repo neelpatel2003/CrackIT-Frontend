@@ -51,9 +51,9 @@ The main goal of the frontend is to provide an **intuitive and responsive interf
 
 _Add your screenshots here (replace file paths after uploading to GitHub):_
 
-![Home](./)  
-![Chatbot](./screenshots/chatbot.png)  
-![Login](./screenshots/login.png)  
+![Home](./public/homepage.png)  
+![Chatbot](./public/chatbot.png)  
+![Login](./public/loginpage.png)  
 
 ---
 
